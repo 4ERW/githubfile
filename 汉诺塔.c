@@ -1,18 +1,19 @@
 #include<stdio.h>
-int hanoi(int n,char A,char B,char C)
+int hanoi(int n, char a, char b, char c)
 {
-  if(n==1)
-    return 0;
-  else{
-     hanoi(n-1,A,B,C);
-     printf("%c-->%c,A,C);
-     hanoi(n-1,C,A,B);
-    }
+	if (n == 1 || n == 0)
+		return 0;
+	else
+	{
+		hanoi(n - 1, A, C, B);
+		printf("%c-->%c", A, C);
+		hanoi(n - 1, B, A, C);
+	}
+	return 0;
 }
 int main()
 {
-  int n;
-  scanf_s("%d",&n)
-  char A,B,C;
-  hanoi(n,A,B,C);
+	int n;
+	scanf_s("%d", &n);
+	hanoi(n, 'A', 'B', 'C');
 }
